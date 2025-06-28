@@ -1,7 +1,9 @@
 ---
-achievement: Bachelor of Science, Journalism
-organization: Mentopolis University
-completionYear: 2016
+achievement: Bachelor of Science in Mathematics and Applied Mathematics
+organization: Fudan University
+completionYear: 2018
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices in iaculis nunc sed augue lacus viverra vitae congue. Neque viverra justo nec ultrices. Urna nunc id cursus metus aliquam eleifend mi in nulla. Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Tristique senectus et netus et malesuada fames ac.
+* Completed coursework including real analysis, abstract algebra, and numerical methods. 
+* Conducted mathematical modeling research during a 2016–17 exchange at Kyoto University.
+* Leveraged these skills in generative AI system development and engineering leadership at Preferred Networks.

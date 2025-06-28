@@ -4,5 +4,8 @@
     "className",
     ".*ClassName",
     "tw"
-  ]
+  ],
+  "files.exclude": {
+    "docs": true
+  }
 }
