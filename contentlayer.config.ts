@@ -90,6 +90,18 @@ export const ProfessionalExperience = defineDocumentType(() => ({
   },
 }));
 
+export const EducationExperience = defineDocumentType(() => ({
+  name: 'EducationExperience',
+  filePathPattern: 'education-experiences/*.md',
+  fields: {
+    university: {
+      type: 'string',
+      description: 'The name of the university you attended',
+      required: true,
+    },
+  },
+}));
+
 export const Achievement = defineDocumentType(() => ({
   name: 'Achievement',
   filePathPattern: 'achievements/*.md',
@@ -145,6 +157,7 @@ export default makeSource({
     Personal,
     Skill,
     ProfessionalExperience,
+    EducationExperience,
     Achievement,
     AdditionalInfo,
     PrivateField,
