@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import AboutMe from 'src/components/articles/about-me';
 import Achievements from 'src/components/articles/achievements';
+import Paper from 'src/components/articles/paper';
 import AdditionalInfo from 'src/components/articles/additional-info';
 import ContactInformation from 'src/components/articles/contact-info';
 import Education from 'src/components/articles/education';
@@ -19,6 +20,7 @@ export default function Page(): ReactNode {
       <Professional />
       <Education />
       <Achievements />
+      <Paper />
       <AdditionalInfo />
     </div>
   );

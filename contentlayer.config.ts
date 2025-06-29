@@ -151,6 +151,28 @@ export const PrivateField = defineDocumentType(() => ({
   },
 }));
 
+export const Paper = defineDocumentType(() => ({
+  name: 'Paper',
+  filePathPattern: 'papers/*.md',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the paper',
+      required: true,
+    },
+    conference: {
+      type: 'string',
+      description: 'The conference where the paper was published',
+      required: true,
+    },
+    url: {
+      type: 'string',
+      description: 'The URL to the paper',
+      required: false,
+    },
+  },
+}));
+
 export default makeSource({
   contentDirPath: 'edit-me/content',
   documentTypes: [
@@ -161,5 +183,6 @@ export default makeSource({
     Achievement,
     AdditionalInfo,
     PrivateField,
+    Paper,
   ],
 });

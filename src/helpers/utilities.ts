@@ -1,7 +1,8 @@
 import {
   allAchievements,
-  allProfessionalExperiences,
   allEducationExperiences,
+  allPapers,
+  allProfessionalExperiences,
   personal,
 } from '@content';
 import { ClassValue } from 'class-variance-authority/types';
@@ -42,6 +43,16 @@ export const sortedAchievements = allAchievements.sort((a, b) => {
   );
   const bOrderNumber = Number.parseInt(
     b._raw.sourceFileName.replaceAll(/^\D+/g, ''),
+  );
+  return aOrderNumber - bOrderNumber;
+});
+
+export const sortedPapers = allPapers.sort((a, b) => {
+  const aOrderNumber = Number.parseInt(
+    a._raw.sourceFileName.replaceAll(/^[^\d]+/g, ''),
+  );
+  const bOrderNumber = Number.parseInt(
+    b._raw.sourceFileName.replaceAll(/^[^\d]+/g, ''),
   );
   return aOrderNumber - bOrderNumber;
 });
