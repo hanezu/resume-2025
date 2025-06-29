@@ -170,6 +170,12 @@ export const Paper = defineDocumentType(() => ({
       description: 'The URL to the paper',
       required: false,
     },
+    authors: {
+      type: 'list',
+      of: { type: 'string' },
+      description: 'List of authors',
+      required: true,
+    },
   },
 }));
 

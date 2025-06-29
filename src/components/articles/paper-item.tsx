@@ -1,10 +1,22 @@
-import { Paper } from '@content';
+// ...existing imports...
 import { DocumentTextIcon } from '@heroicons/react/24/solid';
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { Heading } from 'src/components/heading/heading';
 import Prose from 'src/components/prose/prose';
 
-export default function PaperItem({ title, conference, url, body }: Paper): ReactNode {
+export default function PaperItem({
+  title,
+  conference,
+  url,
+  authors,
+  body,
+}: {
+  title: string;
+  conference: string;
+  url?: string;
+  authors: string[];
+  body: { html: string };
+}): ReactNode {
   return (
     <article className="space-y-4">
       <div className="space-y-1">
@@ -23,8 +35,17 @@ export default function PaperItem({ title, conference, url, body }: Paper): Reac
           )}
         </Heading>
 
+        {/* authors list */}
+        <div className="text-neutral-11 text-base font-medium tracking-wide">
+          {authors.map((author, index) => (
+            <Fragment key={`${author}-${index.toString()}`}>  
+              {author === 'Huachun Zhu' ? <strong>{author}</strong> : author}
+              {index < authors.length - 1 ? ', ' : ''}
+            </Fragment>
+          ))}
+        </div>
         <div className="text-neutral-11 flex items-center gap-2 text-lg font-semibold tracking-wide">
-          <DocumentTextIcon className="h-4" />
+          {/* <DocumentTextIcon className="h-4" /> */}
           {conference}
         </div>
       </div>
