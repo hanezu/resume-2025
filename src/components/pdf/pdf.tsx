@@ -107,20 +107,22 @@ const spacers = {
   6: '16px',
 };
 
+const half_inch = '32px';
+
 const styles = StyleSheet.create({
   page: {
     alignItems: 'stretch',
     backgroundColor: getNeutralColor(1, theme),
     color: getNeutralColor(12, theme),
     display: 'flex',
-    // Stack sidebar and main content vertically
     flexDirection: 'column',
     fontFamily: 'Albert Sans',
     fontSize: fontSizes.xxs,
     justifyContent: 'flex-start',
     lineHeight: 1.3,
+    padding: half_inch,
   },
-  sidebar: {
+  introPanel: {
     alignSelf: 'stretch',
     backgroundColor: getNeutralColor(3, theme),
     display: 'flex',
@@ -130,7 +132,7 @@ const styles = StyleSheet.create({
     flexGrow: 0,
     flexShrink: 1,
   },
-  sidebarContent: { padding: spacers[4] },
+  introPanelContent: { padding: spacers[4] },
   header: {
     backgroundColor: getAccentColor(6, theme),
     color: getNeutralColor(12, theme),
@@ -151,7 +153,9 @@ const styles = StyleSheet.create({
     flexShrink: 0,
     padding: spacers[4],
   },
-  section: { marginBottom: spacers[4] },
+  section: {
+    marginBottom: spacers[4], 
+  },
   sectionHeading: {
     alignItems: 'center',
     display: 'flex',
@@ -337,12 +341,12 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
       title={`Resumé for ${fullName}, ${year.toString()}`}
     >
       <Page size="LETTER" style={styles.page}>
-        <View style={styles.sidebar}>
+        <View style={styles.introPanel}>
           <View style={styles.header}>
             <Text style={styles.headerTitle}>{fullName}</Text>
             <Text style={styles.headerSubtitle}>{personal.title}</Text>
           </View>
-          <View style={styles.sidebarContent}>
+          <View style={styles.introPanelContent}>
             <View style={styles.section}>
               <View style={styles.sectionHeadingNonHTML}>
                 <CircleUser size={fontSizes.m} />
