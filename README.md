@@ -1,9 +1,13 @@
 # My README
 
-Search for icons: 
+* Dev: `nvm use v22.17.0` and `npm run dev`
+* Deploy: push to `main` branch.
+
+## Icons
 * https://simpleicons.org/
 * https://react-icons.github.io/react-icons/
 
+---
 Original README begin here:
 
 # Next.js and Tailwind Résumé

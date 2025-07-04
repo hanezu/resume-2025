@@ -20,6 +20,10 @@ export default function PaperItem({
   return (
     <article className="space-y-4">
       <div className="space-y-1">
+        <div className="text-neutral-11 flex items-center gap-2 text-lg font-semibold tracking-wide">
+          <DocumentTextIcon className="h-4" />
+          {conference}
+        </div>
         <Heading className="text-balance" level={3}>
           {url ? (
             <a
@@ -43,10 +47,6 @@ export default function PaperItem({
               {index < authors.length - 1 ? ', ' : ''}
             </Fragment>
           ))}
-        </div>
-        <div className="text-neutral-11 flex items-center gap-2 text-lg font-semibold tracking-wide">
-          {/* <DocumentTextIcon className="h-4" /> */}
-          {conference}
         </div>
       </div>
 

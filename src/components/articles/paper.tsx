@@ -13,7 +13,7 @@ export default function Papers(): ReactNode {
           className="justify-center"
           Icon={DocumentTextIcon}
           level={2}
-          text="Papers"
+          text="Research Publications"
         />
 
         {sortedPapers.map((paper) => (
