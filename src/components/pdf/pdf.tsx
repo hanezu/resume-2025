@@ -113,8 +113,8 @@ const styles = StyleSheet.create({
     backgroundColor: getNeutralColor(1, theme),
     color: getNeutralColor(12, theme),
     display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'nowrap',
+    // Stack sidebar and main content vertically
+    flexDirection: 'column',
     fontFamily: 'Albert Sans',
     fontSize: fontSizes.xxs,
     justifyContent: 'flex-start',
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     backgroundColor: getNeutralColor(3, theme),
     display: 'flex',
     color: getNeutralColor(12, theme),
-    flexBasis: '30%',
+    // full width in vertical layout
     flexDirection: 'column',
     flexGrow: 0,
     flexShrink: 1,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   main: {
     alignSelf: 'stretch',
     display: 'flex',
-    flexBasis: '70%',
+    // full width in vertical layout
     flexDirection: 'column',
     flexGrow: 1,
     flexShrink: 0,
