@@ -1,5 +1,7 @@
 import { resumeConfig } from '@config/resume-config';
 import {
+  EducationExperience,
+  Paper,
   PrivateField,
   ProfessionalExperience,
   additionalInfo,
@@ -19,6 +21,7 @@ import { HtmlProps } from 'node_modules/react-pdf-html/dist/types/Html';
 import { ReactNode } from 'react';
 import Html from 'react-pdf-html';
 import BuildingColumns from 'src/components/pdf/icons/building-columns';
+import Calendar from 'src/components/pdf/icons/calendar';
 import CircleBriefcase from 'src/components/pdf/icons/circle-briefcase';
 import CircleCheck from 'src/components/pdf/icons/circle-check';
 import CircleGraduationCap from 'src/components/pdf/icons/circle-graduation-cap';
@@ -30,6 +33,8 @@ import { getAccentColor, getNeutralColor } from 'src/helpers/colors';
 import {
   fullName,
   sortedAchievements,
+  sortedEducationExperiences,
+  sortedPapers,
   sortedProfessionalExperiences,
 } from 'src/helpers/utilities';
 
@@ -275,6 +280,54 @@ function ProfessionalExperienceDetails({
   );
 }
 
+// Education details component mimicking ProfessionalExperienceDetails
+interface EducationDetailsProperties {
+  educationExperience: EducationExperience;
+}
+function EducationDetails({
+  educationExperience,
+}: EducationDetailsProperties): ReactNode {
+  return (
+    <>
+      <View style={styles.itemSubheadingRow}>
+        <View style={styles.itemSubheadingSubRow}>
+          <Text style={styles.itemSubheadingItalic}>
+            {educationExperience.university}
+          </Text>
+        </View>
+      </View>
+    </>
+  );
+}
+
+// Research details component mimicking ProfessionalExperienceDetails
+interface ResearchDetailsProperties {
+  paper: Paper;
+}
+function ResearchDetails({ paper }: ResearchDetailsProperties): ReactNode {
+  return (
+    <>
+      <View style={styles.itemSubheadingRow}>
+        <View style={styles.itemSubheadingSubRow}>
+          {paper.authors.map((author, index) => (
+            <Text key={index} style={styles.itemSubheadingItalic}>
+              {author}
+            </Text>
+          ))}
+        </View>
+      </View>
+      <View style={styles.itemSubheadingRow}>
+        <Text style={styles.itemSubheading}>{paper.conference}</Text>
+      </View>
+      {paper.url && (
+        <View style={styles.itemSubheadingRow}>
+          <Text style={styles.a}>{paper.url}</Text>
+        </View>
+      )}
+    </>
+  );
+}
+
 export default function PDF({ privateInformation }: PDFProperties): ReactNode {
   const year = new Date().getFullYear();
 
@@ -356,6 +409,7 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
               </View>
             ))}
           </View>
+          {/* Achievements Section */}
           <View style={styles.section}>
             <View style={styles.sectionHeading}>
               <CircleGraduationCap size={fontSizes.m} />
@@ -373,6 +427,35 @@ export default function PDF({ privateInformation }: PDFProperties): ReactNode {
                   </Text>
                 </View>
                 <Html {...htmlProperties}>{achievement.body.html}</Html>
+              </View>
+            ))}
+          </View>
+          {/* Education Section */}
+          <View style={styles.section}>
+            <View style={styles.sectionHeading}>
+              <Calendar size={fontSizes.m} />
+              <Text>Education</Text>
+            </View>
+            {sortedEducationExperiences.map((education) => (
+              <View key={education._id}>
+                <EducationDetails educationExperience={education} />
+                <Html {...htmlProperties}>{education.body.html}</Html>
+              </View>
+            ))}
+          </View>
+          {/* Research Section */}
+          <View style={styles.section}>
+            <View style={styles.sectionHeading}>
+              <CirclePaintbrush size={fontSizes.m} />
+              <Text>Research</Text>
+            </View>
+            {sortedPapers.map((paper) => (
+              <View key={paper._id}>
+                <View style={styles.itemHeading}>
+                  <Text style={styles.bold}>{paper.title}</Text>
+                </View>
+                <ResearchDetails paper={paper} />
+                <Html {...htmlProperties}>{paper.body.html}</Html>
               </View>
             ))}
           </View>
