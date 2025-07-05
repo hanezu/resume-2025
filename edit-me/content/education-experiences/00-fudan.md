@@ -1,5 +1,10 @@
 ---
 university: Fudan University
+degree: Bachelor of Science in Mathematics and Applied Mathematics
+startYear: 2014
+completionYear: 2018
+location: Shanghai, China
 ---
 
-fudan university is a prestigious university located in shanghai, china. it is known for its strong emphasis on research and academic excellence, particularly in the fields of social sciences, humanities, and business. the university has a diverse student body and offers a wide range of undergraduate and graduate programs. its campus is home to numerous research institutes and centers, fostering a vibrant intellectual community.
+* Completed coursework including real analysis, abstract algebra, and numerical methods. 
+* Conducted mathematical modeling research during a 2016–17 exchange at Kyoto University.

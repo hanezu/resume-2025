@@ -99,6 +99,26 @@ export const EducationExperience = defineDocumentType(() => ({
       description: 'The name of the university you attended',
       required: true,
     },
+    degree: {
+      type: 'string',
+      description: 'The degree or program you completed',
+      required: true,
+    },
+    startYear: {
+      type: 'number',
+      description: 'The year you started the degree',
+      required: true,
+    },
+    completionYear: {
+      type: 'number',
+      description: 'The year you completed the degree',
+      required: true,
+    },
+    location: {
+      type: 'string',
+      description: 'The location of the institution',
+      required: true,
+    },
   },
 }));
 
