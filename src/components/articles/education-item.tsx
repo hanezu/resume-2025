@@ -10,6 +10,7 @@ export default function EducationItem ({
     startYear,
     completionYear,
     location,
+    courseworks,
     body
 }: EducationExperience): ReactNode {
     return (
@@ -27,6 +28,19 @@ export default function EducationItem ({
                 </div>
             </div>
             <Prose html={body.html} />
+            {courseworks && courseworks.length > 0 && (
+                <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-neutral-11 text-sm font-semibold">Courseworks:</span>
+                    {courseworks.map((cw) => (
+                            <span
+                                key={cw}
+                                className="inline-flex items-center px-3 py-1 text-xs font-medium bg-neutral-4 text-neutral-12 rounded-full border transition-colors hover:bg-neutral-4"
+                            >
+                                {cw}
+                            </span>
+                    ))}
+                </div>
+            )}
         </article>
     )
 }

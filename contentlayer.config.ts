@@ -119,6 +119,12 @@ export const EducationExperience = defineDocumentType(() => ({
       description: 'The location of the institution',
       required: true,
     },
+    courseworks: {
+      type: 'list',
+      of: { type: 'string' },
+      description: 'List of coursework for this degree',
+      required: false,
+    },
   },
 }));
 
