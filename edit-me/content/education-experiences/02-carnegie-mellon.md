@@ -5,7 +5,9 @@ startYear: 2024
 completionYear: 2025
 location: Pittsburgh, PA, USA
 courseworks:
-- Core courses on Software Engineering (Software Architecture, Quality Assurance, Project Management, etc.)
+- Software Architecture
+- Quality Assurance
+- Project Management
 - Machine Learning Systems
 - Computer Graphics
 ---

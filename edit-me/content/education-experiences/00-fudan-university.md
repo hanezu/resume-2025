@@ -7,5 +7,6 @@ location: Shanghai, China
 courseworks:
 - Real and Complex Analysis
 - Differential Equations
-- Thesis: Online Learning using Robust Randomized Sparse Kaczmarz Algorithm
 ---
+
+Thesis\: "Online Learning using Robust Randomized Sparse Kaczmarz Algorithm"
