@@ -1,5 +1,6 @@
 # My README
 
+* Install: `nvm install v22.17.0` and `npm install`  
 * Dev: `nvm use v22.17.0` and `npm run dev`
 * Deploy: push to `main` branch.
 
